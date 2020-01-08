@@ -55,19 +55,24 @@
 
         </div>
             <div class="col">
-                <div class="row">
-                    <div class="col-4">
-                        <img src="http://placehold.it/64x64" alt="Avatar de Joseph">
+            {% set a=ad.author %}
+                <div class="row mb-3 align-items-center">
+                    <div class="col-3">
+                        <a href="{{path('user_show',{'slug':a.slug})}}">
+                            <img src="{{a.picture}}" class="avatar avatar-medium" alt="Avatar de {{ a.fullName }}">
+                        </a>
                     </div>
                     <div class="col">
-                        <h3> Joseph Dupont </h3>
-                        <span class="badge badge-primary"> 3 annonces </span>
+                        <a href="{{path('user_show',{'slug':a.slug})}}">
+                        <h3> {{ a.fullName }}</h3>
+                        </a>
+                        <a href="{{path('user_show',{'slug':a.slug})}}">
+                        <span class="badge badge-primary"> {{ a.ads | length }} annonce(s) </span>
+                        </a>
                     </div>
                 </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic commodi laborum consectetur autem iusto nihil nesciunt et tenetur qui possimus!</p>
-            <p>Accusantium quis blanditiis dolorem nemo ratione, tenetur molestiae? Fuga corrupti voluptatem vel quibusdam temporibus sapiente voluptate eligendi ipsum aliquam! Nulla.</p>
-            <p>Incidunt quia aspernatur commodi ullam debitis repellendus temporibus harum sit hic adipisci. Esse excepturi saepe deserunt fuga quidem quisquam quas.</p>
-            </div>
+                {{ a.description | raw }}
+                </div>
         </div>
     </div>
 
