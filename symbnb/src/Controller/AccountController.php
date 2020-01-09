@@ -59,7 +59,6 @@ class AccountController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $hash= $encoder->encodePassword($user, $user->getHash());
             $user->setHash($hash);
-            $user->setHash($hash);
             $manager-> persist($user);
             $manager->flush();
 
