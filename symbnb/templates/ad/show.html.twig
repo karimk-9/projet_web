@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ad.title}}
+
+
+
 {% endblock %}
 
 {% block body %}
@@ -16,7 +18,7 @@
     par nuit.
 
     </p>
-    <a href="#" class="btn btn-primary">Réserver</a>
+    <a href="{{path('booking_create',{'slug': ad.slug})}}" class="btn btn-primary">Réserver</a>
     {% if app.user and app.user == ad.author %}
 
     <a href="{{ path('ads_edit',{'slug':ad.slug}) }}" class="btn btn-secondary">Modifier l'annonce</a>
@@ -43,7 +45,7 @@
         <div class="carousel-item {%if loop.first %} active {% endif %}">
         <img class="d-block w-100" src="{{ image.url }}" alt="First slide">
 
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption  d-md-block">
             <h5>{{ad.title}}</h5>
             <p>{{image.caption}}</p>
         </div>
