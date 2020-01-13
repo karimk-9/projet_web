@@ -15,6 +15,17 @@
             <div class="row">
                 <div class="col-4">
                     <img src="{{ad.coverImage}}" alt="Photo de l'annonce {{booking.ad.title}}" class="img-fluid">
+
+                    <div class="mt-3">
+                        {% set comment = ad.commentFromAuthor(app.user) %}
+                        {% if comment is not null %}
+                        Note donnée : {% include 'common/notation.html.twig' with {'rating': comment.rating} %}
+                        {% else %}
+                            Pas encore noté
+
+                            <a href="{{path('booking_show', {'id':booking.id})}} #comment" class="btn btn-link">Noter la réservation</a>
+                        {% endif %}
+                    </div>
                 </div>
                 <div class="col-8">
                     <h4>{{ad.title}}</h4>
