@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} Vos réservations passées et à venir {% endblock %}
+{% block title %} Mes réservations {% endblock %}
 
 
 {% block body %}
     <div class="container">
         <h1>Mes réservations</h1>
         <div class="alert alert-info mt-3">
-            <p>Retrouvez ci-dessous toutes vos réservations passées et à venir</p>
+            <p>Retrouvez ci-dessous toutes vos réservations</p>
         </div>
 
         {% for booking in app.user.bookings %}

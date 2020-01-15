@@ -87,6 +87,11 @@ class Ad
      */
     private $comments;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $seats;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
@@ -350,6 +355,18 @@ class Ad
                 $comment->setAd(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSeats(): ?int
+    {
+        return $this->seats;
+    }
+
+    public function setSeats(int $seats): self
+    {
+        $this->seats = $seats;
 
         return $this;
     }

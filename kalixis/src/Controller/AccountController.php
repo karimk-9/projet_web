@@ -91,7 +91,7 @@ class AccountController extends AbstractController
 
             $this->addFlash(
                 'success',
-                "Les données du profil ont été enregistrés avec succès!"
+                "Le profil a bien été modifié"
             );
         }
         return $this->render('account/profile.html.twig',[

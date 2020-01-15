@@ -7,18 +7,12 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                     <a class="nav-link" href="">
-                       
-                    Accueil</a> 
-                        
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ path('admin_ads_index') }}">
                           
                         Annonces</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{path('admin_booking_index')}}">
                         
                         Réservation</a>
                     </li>
@@ -55,7 +49,7 @@
         </nav>
 
         {% for label, messages in app.flashes %}
-            <div class="container">
+            <div class="container text-center">
                 <div class="alert alert-{{label}}">
                 {% for message in messages %}
                 <p> {{ message | raw }} </p>

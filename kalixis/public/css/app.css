@@ -24,7 +24,7 @@ div.carousel-caption{
 .avatar{
     max-width: 128px;
     max-height: 128px;
-    border-radius: 50%;
+    border-radius: 30%;
 }
 .avatar-medium{
     max-width: 64px;
@@ -32,8 +32,8 @@ div.carousel-caption{
 }
 
 .avatar-mini{
-    max-width: 24px;
-    min-width: 24px;
+    max-width: 30px;
+    min-width: 30px;
 }
 .avatar-micro{
     max-width: 22px;
@@ -46,4 +46,11 @@ div.carousel-caption{
 
 span.rating i {
     color: #66ff99;
+}
+.font_ori{
+    font-family: 'Carter One', cursive;
+}
+.btn-outline-primary {
+    color: #2cffc5;
+    border-color: #3df7b4;
 }

@@ -9,14 +9,16 @@
 {% block body %}
 
     <div class="container">
-        <h1>Réservez pour l'annonce : {{ad.title}} </h1>
-
-        <p>Vous êtes sur le point de réserver le bien de <strong>{{ad.author.fullName}}</strong>,
-        dites nous tout, on s'occupe du reste !</p>
-
+        <h1>Réservez la voiture : {{ad.title}} </h1>
+        <br>
+        <p>Ce véhivule appartient à <strong> {{ad.author.fullName}}</strong> et dispose de {{ad.seats}} places. </p>
+        <br>
+        <div>
+        <img src="{{ad.coverImage}}" alt="véhicule de {{ad.author.fullName}}" class="text-center shadow p-3 mb-5 bg-white rounded">
+        </div>
         {{form_start(form)}}
         <div class="alert alert-light">
-            <h2>Commencez par nous dire quelles sont les dates qui vous intéressent</h2>
+            
             <div class="row">
                 <div class="col">
                     {{form_row(form.startDate)}}
@@ -25,16 +27,20 @@
                      {{form_row(form.endDate)}}
                 </div>
             </div>
-        <h4>Montant du séjour : <span id="amount"></span>&euro;</h4>
-        <span id="days">0</span> nuit(s) à {{ad.price}}&euro; / nuit 
-        <h4 class="mt-3">Vous avez un commentaire ? </h4>
+        <h4>Montant total de la location : <span id="amount"></span>&euro;</h4>
+        <span id="days">0</span> jour(s) au tarif {{ad.price}}&euro; / jour
+        <h4 class="mt-3">Précision à transmettre au propriétaire </h4>
         {{form_row(form.comment)}}
         </div>
-        <h2>Vous avez terminé ! </h2>
-        <p>Vacances de rêve ? hébergement pour le boulot ? Peu importe, on est avec vous </p>
+  
+      
+           
+                    <button type="submit" class="btn btn-outline-primary">Valider </button>
+               
+        
 
-        <button type="submit" class="btn btn-primary">Je réserve </button>
         {{form_end(form)}}
+
     </div>
 
 {% endblock %}

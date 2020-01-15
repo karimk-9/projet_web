@@ -37,7 +37,7 @@ class AppFixtures extends Fixture
                    ->setHash($this->encoder->encodePassword($adminUser,'password'))
                    ->setPicture('https://avatars.io/twitter')
                    ->setIntroduction($faker->sentence())
-                   ->setDescription('<p>'. join('</p><p>', $faker->paragraphs(1)).'</p>')
+                   ->setDescription('<p> coucou c moi </p>')
                    ->addUserRole($adminRole);
 
         $manager->persist($adminUser);
@@ -48,7 +48,7 @@ class AppFixtures extends Fixture
         $genres = ['male','female'];
 
 
-        for ($i=1; $i <=10 ; $i++) { 
+        for ($i=1; $i <=20 ; $i++) { 
             $user= new User();
 
             $genre=$faker->randomElement($genres);
@@ -78,13 +78,12 @@ class AppFixtures extends Fixture
 
         //Gestion des annonces 
 
-        // $product = new Product();
-        // $manager->persist($product);
+
         for($i=0;$i<30;$i++){
         $ad=new Ad();
 
         $title=$faker->sentence();
-        $coverImage=$faker->imageUrl(1000,350);
+        $coverImage=$faker->imageUrl();
         $introduction=$faker->paragraph(2);
         $content='<p>'. join('</p><p>', $faker->paragraphs(2)).'</p>';
 
@@ -94,7 +93,8 @@ class AppFixtures extends Fixture
             ->setCoverImage($coverImage)
             ->setIntroduction($introduction)
             ->setContent($content)
-            ->setPrice(mt_rand(40,200))
+            ->setPrice(mt_rand(30,150))
+            ->setSeats(mt_rand(2,8))
             ->setRooms(mt_rand(1,5))
             ->setAuthor($user);
 
