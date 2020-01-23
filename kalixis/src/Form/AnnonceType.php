@@ -28,7 +28,7 @@ class AnnonceType extends ApplicationType
             ->add('coverImage', UrlType::class, $this->getConfiguration("Url de l'image principale","Donnez une URL"))
             ->add('introduction', TextType::class,$this->getConfiguration("Introduction","Donnez une description de l'annonce"))
             ->add('content',TextareaType::class, $this->getConfiguration("Description détaillée",""))
-            ->add('rooms', IntegerType::class, $this->getConfiguration("Nombre de sièges","Nombre de sièges"))
+            ->add('seats', IntegerType::class, $this->getConfiguration("Nombre de sièges","Nombre de sièges"))
             ->add('price', MoneyType::class, $this->getConfiguration("Prix par jour","Indiquez le prix que vous voulez"))
             ->add(
                 'images',

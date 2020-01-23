@@ -95,7 +95,6 @@ class AppFixtures extends Fixture
             ->setContent($content)
             ->setPrice(mt_rand(30,150))
             ->setSeats(mt_rand(2,8))
-            ->setRooms(mt_rand(1,5))
             ->setAuthor($user);
 
         for ($j=1;$j<=mt_rand(2,5);$j++){

@@ -61,10 +61,7 @@ class Ad
      */
     private $coverImage;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $rooms;
+
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="ad", orphanRemoval=true)
@@ -242,14 +239,14 @@ class Ad
         return $this;
     }
 
-    public function getRooms(): ?int
+    public function getSeats(): ?int
     {
-        return $this->rooms;
+        return $this->seats;
     }
 
-    public function setRooms(int $rooms): self
+    public function setSeats(int $seats): self
     {
-        $this->rooms = $rooms;
+        $this->seats = $seats;
 
         return $this;
     }
@@ -359,15 +356,5 @@ class Ad
         return $this;
     }
 
-    public function getSeats(): ?int
-    {
-        return $this->seats;
-    }
 
-    public function setSeats(int $seats): self
-    {
-        $this->seats = $seats;
-
-        return $this;
-    }
 }
