@@ -47,7 +47,7 @@ class AccountController extends AbstractController
 
     /**
      * Permet d'afficher le formulaire d'insription
-     *@Route("/register", name="account_register")
+     *@Route("/inscription", name="account_register")
      * @return Response
      */
     public function register(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder){
@@ -57,6 +57,20 @@ class AccountController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
+            
+            $file=$form->get('picture')->getData();
+            $original_file_name=pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $original_file_name);
+            $uploads_directory=$this->getParameter('uploads_directory');
+        
+            $filename= $safeFilename.'-'.uniqid(). '.' .$file->guessExtension();
+            $user->setPicture($filename);
+
+            $file->move(
+                $uploads_directory,
+                $filename
+            );
+
             $hash= $encoder->encodePassword($user, $user->getHash());
             $user->setHash($hash);
             $manager-> persist($user);
@@ -76,7 +90,7 @@ class AccountController extends AbstractController
     }
     /**
      * Permet d'afficher et de traiter le formulaire de modification du profil
-     * @Route("/account/profile", name="account_profile")
+     * @Route("/compte/profil", name="account_profile")
      * 
      * @return Response
      */
@@ -100,7 +114,7 @@ class AccountController extends AbstractController
     }
     /**
      * Permet de modifier le mot de passe
-     * @Route ("/account/password-update",name="account_password")
+     * @Route ("/compte/password-update",name="account_password")
      * @return Response
      */
     public function updatePassword(Request $request, UserPasswordEncoderInterface $encoder, EntityManagerInterface $manager){
@@ -145,7 +159,7 @@ class AccountController extends AbstractController
     }
     /**
      * Permet d'afficher le profil de l'utilisateur connecté
-     *@Route("/account", name="account_index")
+     *@Route("/compte", name="account_index")
      * @return Response
      */
     public function myAccount(){
@@ -160,7 +174,7 @@ class AccountController extends AbstractController
      * 
      *
      * @return Response
-     * @Route("/account/bookings",name="account_bookings")
+     * @Route("/compte/reservations",name="account_bookings")
      */
     public function bookings(){
         return $this->render('account/bookings.html.twig');

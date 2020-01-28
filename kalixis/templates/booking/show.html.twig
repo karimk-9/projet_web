@@ -16,7 +16,7 @@
                 Votre réservation auprès de <strong> <a href="{{path('user_show',{'slug': author.slug})}}">{{author.fullName}}</a></strong>
                 pour l'annonce <strong>
                     <a href="{{path('ads_show',{'slug': ad.slug})}}">{{ad.title}}</a>
-                </strong>
+                </strong> a bien été validée.
                 </p>
             </div>
         {% endif %}
@@ -28,11 +28,11 @@
                 <dl class="row">
                     <dt class="col-md-4">Numéro de réservation</dt>
                     <dd class="col-md-8">{{booking.id}}</dd>
-                    <dt class="col-md-4">Date d'arrivée</dt>
+                    <dt class="col-md-4">Date de début</dt>
                     <dd class="col-md-8">{{booking.startDate | date ('d/n/Y')}}</dd>
-                    <dt class="col-md-4">Date de départ</dt>
+                    <dt class="col-md-4">Date de fin</dt>
                     <dd class="col-md-8">{{booking.endDate | date ('d/n/Y')}}</dd>
-                    <dt class="col-md-4">Nombre de nuits</dt>
+                    <dt class="col-md-4">Nombre de jours</dt>
                     <dd class="col-md-8">{{booking.duration}}</dd>
                     <dt class="col-md-4">Montant total</dt>
                     <dd class="col-md-8">{{booking.amount}} &euro;</dd>
@@ -41,7 +41,7 @@
                 </dl>
                 <hr>
 
-                <h2 class="alert-heading">Votre hôte</h2>
+                <h2 class="alert-heading">Le propriétaire</h2>
                 <div class="row">
                     <div class="col-3">
                         <img src="{{author.picture}}" class="avatar avatar-medium" alt="Avatar de {{author.fullName}}">

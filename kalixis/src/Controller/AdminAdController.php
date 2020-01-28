@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminAdController extends AbstractController
 {
     /**
-     * @Route("/admin/ads", name="admin_ads_index")
+     * @Route("/admin/annonces", name="admin_ads_index")
      */
     public function index(AdRepository $repo)
     {
@@ -24,7 +24,7 @@ class AdminAdController extends AbstractController
 
     /**
      * Permet d'affciher le formulaire d'édition
-     *@Route("/admin/ads/{id}/edit",name="admin_ads_edit")
+     *@Route("/admin/annonce/{id}/edit",name="admin_ads_edit")
      * @param Ad $ad
      * @return void
      */
@@ -48,7 +48,7 @@ class AdminAdController extends AbstractController
     /**
      * Permet de supprimer une annonce
      *
-     * @Route("/admin/ads/{id}/delete", name="admin_ads_delete")
+     * @Route("/admin/annonce/{id}/delete", name="admin_ads_delete")
      * 
      */
     public function delete(Ad $ad,EntityManagerInterface $manager){

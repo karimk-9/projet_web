@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class BookingController extends AbstractController
 {
     /**
-     * @Route("/ads/{slug}/book", name="booking_create")
+     * @Route("/annonce/{slug}/reservation", name="booking_create")
      * @IsGranted("ROLE_USER")
      */
     public function book(Ad $ad, Request $request, EntityManagerInterface $manager)
@@ -56,7 +56,7 @@ class BookingController extends AbstractController
 
     /**
      * Permet d'afficher la page d'une réservation
-     * @Route("/booking/{id}",name="booking_show")
+     * @Route("/reservation/{id}",name="booking_show")
      * 
      */
     public function show(Booking $booking, Request $request, EntityManagerInterface $manager){

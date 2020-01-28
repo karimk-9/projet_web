@@ -45,7 +45,7 @@ div.carousel-caption{
 }
 
 span.rating i {
-    color: #66ff99;
+    color: gold;
 }
 .font_ori{
     font-family: 'Carter One', cursive;
@@ -53,4 +53,18 @@ span.rating i {
 .btn-outline-primary {
     color: #2cffc5;
     border-color: #3df7b4;
+}
+footer{
+
+ 
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.voiturePrincipale{
+    max-width: 800px;
+    max-height: 800px;
+ 
 }

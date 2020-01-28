@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -23,7 +24,11 @@ class RegistrationType extends ApplicationType
             ->add('firstName', TextType::class, $this->getConfiguration("Prénom",""))
             ->add('lastName', TextType::class, $this->getConfiguration("Nom",""))
             ->add('email', EmailType::class, $this->getConfiguration("Email",""))
-            ->add('picture', UrlType::class, $this->getConfiguration("Photos de profil","Url de votre avatar"))
+          /*  ->add('picture', UrlType::class, $this->getConfiguration("Photos de profil","Url de votre avatar"))*/
+            ->add('picture', FileType::class,[
+                'mapped'=>true,
+                'label'=>"Veuillez uploader une image"
+            ])
             ->add('hash',PasswordType::class, $this->getConfiguration("Mot de passe",""))
             ->add('passwordConfirm', PasswordType::class, $this->getConfiguration("Confirmation de mot de passe",""))
             ->add('introduction', TextType::class,$this->getConfiguration("Introduction","Présentez-vous en quelques mots..."))

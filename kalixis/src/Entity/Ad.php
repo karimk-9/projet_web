@@ -130,7 +130,7 @@ class Ad
         $notAvailableDays=[];
 
         foreach($this->bookings as $booking){
-            // calcul des jours se trouvant entre la date d'arrivée et de départ
+            // calcul des jours se trouvant entre la date de début et de fin
             $resultat=range(
                 $booking->getStartDate()->getTimestamp(),
                 $booking->getEndDate()->getTimestamp(),

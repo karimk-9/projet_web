@@ -19,7 +19,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdController extends AbstractController
 {
     /**
-     * @Route("/ads", name="ads_index")
+     * @Route("/annonces", name="ads_index")
      */
     public function index(AdRepository $repo)
     {
@@ -33,7 +33,7 @@ class AdController extends AbstractController
     }
     /**
      * Permet de créer une annonce
-     *@Route("/ads/new",name="ads_create")
+     *@Route("/annonce/new",name="ads_create")
      @IsGranted("ROLE_USER")
      * @return Response
      */
@@ -76,7 +76,7 @@ class AdController extends AbstractController
     }
     /**
      * Permet d'afficher le formulaire d'édition
-     * @Route("/ads/{slug}/edit", name="ads_edit")
+     * @Route("/annonce/{slug}/edit", name="ads_edit")
      * @Security("is_granted('ROLE_USER') and user === ad.getAuthor()", message="Cette annonce ne vous appartient pas, vous ne pouvez pas la modifier")
      * @return Response
      */
@@ -117,7 +117,7 @@ class AdController extends AbstractController
     /**
      * Permet d'afficher une seule annonce
      * 
-     * @Route("/ads/{slug}",name="ads_show")
+     * @Route("/annonce/{slug}",name="ads_show")
      * @return Response
      */
     public function show($slug, AdRepository $repo){
@@ -130,7 +130,7 @@ class AdController extends AbstractController
     }
     /**
      * Permet de supprimer une annonce
-     * @Route("/ads/{slug}/delete", name="ads_delete")
+     * @Route("/annonce/{slug}/delete", name="ads_delete")
      * @Security("is_granted('ROLE_USER') and user == ad.getAuthor()", message="Vous n'avez pas le droit d'accéder à cette ressource")
      */
     public function delete(Ad $ad, EntityManagerInterface $manager){

@@ -46,10 +46,10 @@ class User implements UserInterface
      * @Assert\Email(message="Veuillez renseigner un e-mail valide.")
      */
     private $email;
-
+//Assert url enlevé depuis upload file : @Assert\Url(message="Veuillez donner une URL valide.")
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\Url(message="Veuillez donner une URL valide.")
+     * 
      */
     private $picture;
 

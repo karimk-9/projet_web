@@ -33,7 +33,7 @@ class AppFixtures extends Fixture
         $adminUser = new User();
         $adminUser ->setFirstName('Karim')
                    ->setLastName('Kassimi')
-                   ->setEmail('kari@symfony.com')
+                   ->setEmail('karim@symfony.com')
                    ->setHash($this->encoder->encodePassword($adminUser,'password'))
                    ->setPicture('https://avatars.io/twitter')
                    ->setIntroduction($faker->sentence())
@@ -100,7 +100,7 @@ class AppFixtures extends Fixture
         for ($j=1;$j<=mt_rand(2,5);$j++){
             $image = new Image();
 
-            $image->setUrl($faker->imageUrl())
+            $image->setUrl('https://i.picsum.photos/id/71/640/480.jpg')
                     ->setCaption($faker->sentence())
                     ->setAd($ad);
 

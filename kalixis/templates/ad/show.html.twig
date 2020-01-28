@@ -8,7 +8,7 @@
 
 {% block body %}
 
-<div class="ad-titler" style="background-image: url({{ ad.coverImage}})">
+<div class="ad-titler" style="background-image: url(https://image.freepik.com/psd-gratuit/conception-fond-resume_1297-87.jpg)">
     <div class="container">
     <h1>{{ ad.title }}</h1>
     <p>{{ad.introduction }}</p>
@@ -29,11 +29,14 @@
     {% endif %}
     </div>
 </div>
-
+<br><br>
 <div class="container">
     <div class="row">
-        <div class="col-md-8 mb-3">
+        <div class="col-md-9 mb-3">
+        <img src="{{ ad.coverImage}}" alt="image principale de la voiture" class="shadow p-3 mb-3 bg-white rounded voiturePrincipale" />
+        <br><br>
         {{ ad.content | raw}}
+        <br><br>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                  <ol class="carousel-indicators">
                  {% for image in ad.images %}
