@@ -33,7 +33,7 @@
                     {% if app.user %}
                     <li class="nav-item dropdown text-light">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="accountDropdownLink">
-                            <img src="{{app.user.picture}}" class="avatar avatar-mini" alt="Avatar de {{app.user.fullName}}">
+                            <img src="{{asset ('uploads/') ~ app.user.picture}}" class="avatar avatar-mini" alt="Avatar de {{app.user.fullName}}">
                              <span class="text-light">{{app.user.fullName}}</span>
                         </a>
 
