@@ -27,7 +27,8 @@ class RegistrationType extends ApplicationType
           /*  ->add('picture', UrlType::class, $this->getConfiguration("Photos de profil","Url de votre avatar"))*/
             ->add('picture', FileType::class,[
                 'mapped'=>true,
-                'label'=>"Veuillez uploader une image"
+                'label'=>"Veuillez uploader une image",
+                'required'=>false
             ])
             ->add('hash',PasswordType::class, $this->getConfiguration("Mot de passe",""))
             ->add('passwordConfirm', PasswordType::class, $this->getConfiguration("Confirmation de mot de passe",""))
