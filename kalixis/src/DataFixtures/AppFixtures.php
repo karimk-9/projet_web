@@ -37,10 +37,20 @@ class AppFixtures extends Fixture
                    ->setHash($this->encoder->encodePassword($adminUser,'password'))
                    ->setPicture('https://avatars.io/twitter')
                    ->setIntroduction($faker->sentence())
-                   ->setDescription('<p> coucou c moi </p>')
+                   ->setDescription('<p> Description générique, j\'ai un peu la flemme d\'en faire une vraie. </p>')
                    ->addUserRole($adminRole);
+                   $adminUser2 = new User();
+                   $adminUser2 ->setFirstName('Yasser')
+                              ->setLastName('Hamek')
+                              ->setEmail('yasser@symfony.com')
+                              ->setHash($this->encoder->encodePassword($adminUser2,'password'))
+                              ->setPicture('https://avatars.io/twitter')
+                              ->setIntroduction($faker->sentence())
+                              ->setDescription('<p> Petite description générique </p>')
+                              ->addUserRole($adminRole);
 
         $manager->persist($adminUser);
+        $manager->persist($adminUser2);
 
         //Gestion des utilisateurs
 
