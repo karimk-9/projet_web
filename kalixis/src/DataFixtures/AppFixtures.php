@@ -79,7 +79,7 @@ class AppFixtures extends Fixture
         //Gestion des annonces 
 
 
-        for($i=0;$i<30;$i++){
+        for($i=0;$i<15;$i++){
         $ad=new Ad();
 
         $title=$faker->sentence();
