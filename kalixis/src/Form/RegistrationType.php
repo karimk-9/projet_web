@@ -24,7 +24,9 @@ class RegistrationType extends ApplicationType
             ->add('firstName', TextType::class, $this->getConfiguration("Prénom",""))
             ->add('lastName', TextType::class, $this->getConfiguration("Nom",""))
             ->add('email', EmailType::class, $this->getConfiguration("Email",""))
-            ->add('picture', UrlType::class, $this->getConfiguration("Photos de profil","Url de votre avatar"))
+            ->add('picture', UrlType::class, $this->getConfiguration("Photos de profil","Url de votre avatar",[
+                'required'=>false
+            ]))
            /* ->add('picture', FileType::class,[
                 'mapped'=>true,
                 'label'=>"Veuillez uploader une image",
