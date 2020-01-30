@@ -24,12 +24,12 @@ class RegistrationType extends ApplicationType
             ->add('firstName', TextType::class, $this->getConfiguration("Prénom",""))
             ->add('lastName', TextType::class, $this->getConfiguration("Nom",""))
             ->add('email', EmailType::class, $this->getConfiguration("Email",""))
-          /*  ->add('picture', UrlType::class, $this->getConfiguration("Photos de profil","Url de votre avatar"))*/
-            ->add('picture', FileType::class,[
+            ->add('picture', UrlType::class, $this->getConfiguration("Photos de profil","Url de votre avatar"))
+           /* ->add('picture', FileType::class,[
                 'mapped'=>true,
                 'label'=>"Veuillez uploader une image",
                 'required'=>false
-            ])
+            ]) */
             ->add('hash',PasswordType::class, $this->getConfiguration("Mot de passe",""))
             ->add('passwordConfirm', PasswordType::class, $this->getConfiguration("Confirmation de mot de passe",""))
             ->add('introduction', TextType::class,$this->getConfiguration("Introduction","Présentez-vous en quelques mots..."))

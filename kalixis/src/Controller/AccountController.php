@@ -57,19 +57,20 @@ class AccountController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            
-            $file=$form->get('picture')->getData();
+            //Upload de la picture
+
+            /*$file=$form->get('picture')->getData();
             $original_file_name=pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
             $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $original_file_name);
             $uploads_directory=$this->getParameter('uploads_directory');
         
-            $filename= $safeFilename.'-'.uniqid(). '.' .$file->guessExtension();
+            $filename= $safeFilename.'-'.uniqid(). '.' .$file->guessExtension(); 
             $user->setPicture($filename);
 
-            $file->move(
+        $file->move(
                 $uploads_directory,
                 $filename
-            );
+            ); */
 
             $hash= $encoder->encodePassword($user, $user->getHash());
             $user->setHash($hash);
