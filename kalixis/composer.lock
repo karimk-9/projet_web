@@ -1996,16 +1996,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.21.0",
+            "version": "v7.21.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "058bfd1fe0cc50054976051ea24969df4da7d66b"
+                "reference": "6c23253581928c35322616c527d0a97e47267ec3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/058bfd1fe0cc50054976051ea24969df4da7d66b",
-                "reference": "058bfd1fe0cc50054976051ea24969df4da7d66b",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/6c23253581928c35322616c527d0a97e47267ec3",
+                "reference": "6c23253581928c35322616c527d0a97e47267ec3",
                 "shasum": ""
             },
             "require": {
@@ -2049,7 +2049,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2020-01-28T19:10:04+00:00"
+            "time": "2020-01-29T20:14:55+00:00"
         },
         {
             "name": "symfony/apache-pack",
@@ -3022,16 +3022,16 @@
         },
         {
             "name": "symfony/flex",
-            "version": "v1.6.1",
+            "version": "v1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "c497c0c77cb9018cccd9c092832ebf9826612f92"
+                "reference": "e4f5a2653ca503782a31486198bd1dd1c9a47f83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/c497c0c77cb9018cccd9c092832ebf9826612f92",
-                "reference": "c497c0c77cb9018cccd9c092832ebf9826612f92",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/e4f5a2653ca503782a31486198bd1dd1c9a47f83",
+                "reference": "e4f5a2653ca503782a31486198bd1dd1c9a47f83",
                 "shasum": ""
             },
             "require": {
@@ -3067,7 +3067,7 @@
                 }
             ],
             "description": "Composer plugin for Symfony",
-            "time": "2020-01-27T15:38:49+00:00"
+            "time": "2020-01-30T12:06:45+00:00"
         },
         {
             "name": "symfony/form",
